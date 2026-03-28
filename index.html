@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Briar Forum Share</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Briar Forum Share</h1>
+    <p class="subtitle">Создайте ссылку-приглашение на форум и поделитесь ей.</p>
+
+    <form id="share-form" class="card">
+      <label>
+        ID форума
+        <input type="text" name="forumId" placeholder="tech-room-42" required />
+      </label>
+
+      <label>
+        Название форума
+        <input type="text" name="forumName" placeholder="Tech Room" required />
+      </label>
+
+      <label>
+        Владелец / модератор
+        <input type="text" name="owner" placeholder="@alice" required />
+      </label>
+
+      <label>
+        Описание
+        <textarea name="description" rows="3" placeholder="О чем этот форум"></textarea>
+      </label>
+
+      <label>
+        Теги (через запятую)
+        <input type="text" name="tags" placeholder="security, foss" />
+      </label>
+
+      <label>
+        URL схема
+        <input type="text" name="scheme" value="briar-forum://share/" required />
+      </label>
+
+      <button type="submit">Сгенерировать ссылку</button>
+    </form>
+
+    <section id="result" class="card hidden" aria-live="polite">
+      <h2>Результат</h2>
+      <label>
+        Ссылка для шаринга
+        <textarea id="share-link" readonly rows="4"></textarea>
+      </label>
+
+      <label>
+        Markdown
+        <textarea id="markdown" readonly rows="3"></textarea>
+      </label>
+
+      <div class="actions">
+        <button id="copy-link" type="button">Копировать ссылку</button>
+        <button id="copy-markdown" type="button">Копировать Markdown</button>
+        <button id="download-json" type="button">Скачать JSON</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
