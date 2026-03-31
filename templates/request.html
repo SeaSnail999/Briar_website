@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Request Forums{% endblock %}
+
+{% block content %}
+<h1>Request Forums</h1>
+
+<div class="block">
+    <h2>Adding as Contact</h2>
+    <p>Briar Forums Briar link: <span class="selectable-link">{{ briar_link }}</span></p>
+    <p>To receive updates from the forums, you must add the Briar Forums Briar account as a contact. This is a crucial step to ensure you stay connected and receive the latest information.</p>
+    <p>Please be patient as it may take some time for the bot to add you. Once the connection is established, verify it before proceeding to request a forum.</p>
+    <form method="POST" action="/request">
+        <input type="hidden" name="action" value="add_contact">
+        <input type="text" name="briar_contact_link" placeholder="Enter your Briar link" required>
+        <button type="submit">Add Contact</button>
+    </form>
+</div>
+
+<div class="block">
+    <h2>Requesting Forums</h2>
+    <p>Once the Briar Forums bot has been added to your contacts, you can request access to specific forums. Use the /help command to get more information on how to interact with the bot and request forums.</p>
+    <p>After the initial introduction by the bot, it is important to share forums with your other contacts. This ensures that you and your contacts continue to receive updates and stay connected with the forums.</p>
+    <p>If you encounter any issues or delays, please be patient. The bot may take some time to process your request. If the problem persists, feel free to reach out for support.</p>
+</div>
+{% endblock %}
